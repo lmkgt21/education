@@ -1,0 +1,6 @@
+target '教学辅助平台学生端' do
+pod 'BmobSDK'
+pod ‘SDWebImage’
+pod ‘Masonry’
+pod 'MJRefresh'
+end
