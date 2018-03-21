@@ -7,6 +7,8 @@
 //
 
 #import "ClassroomViewController.h"
+#import "EnterClassroomViewController.h"
+#import <MJRefresh.h>
 static NSString *const classroomViewControllerTalbeViewCellId = @"classroomViewControllerTalbeViewCellId";
 @interface ClassroomViewController ()
 
@@ -121,13 +123,24 @@ static NSString *const classroomViewControllerTalbeViewCellId = @"classroomViewC
 }
 -(void)loadTableView
 {
-    _classroomTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64) style:UITableViewStyleGrouped];
+    _classroomTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height-64-49) style:UITableViewStyleGrouped];
     [self.view addSubview:_classroomTableView];
     _classroomTableView.dataSource = self;
     _classroomTableView.delegate = self;
     _classroomTableView.backgroundColor = [UIColor whiteColor];
     [_classroomTableView registerClass:[ClassroomTableViewCell class] forCellReuseIdentifier:classroomViewControllerTalbeViewCellId];
     _classroomTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(tableViewPulldown)];
+    [header setTitle:@"下拉刷新" forState:MJRefreshStateIdle];
+    [header setTitle:@"松开立即刷新" forState:MJRefreshStatePulling];
+    [header setTitle:@"刷新中" forState:MJRefreshStateRefreshing];
+    header.lastUpdatedTimeLabel.hidden = YES;
+    _classroomTableView.mj_header = header;
+}
+-(void)tableViewPulldown
+{
+    [_classroomTableView.mj_header endRefreshing];
+    [self downLoadData];
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -158,14 +171,11 @@ static NSString *const classroomViewControllerTalbeViewCellId = @"classroomViewC
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NewHomeworkViewController *newHomeworkViewController = [[NewHomeworkViewController alloc] init];
-    newHomeworkViewController.title = @"新作业";
-    newHomeworkViewController.courseObject = _classroomArray[indexPath.row];
-    UINavigationController *newHomeworkNavigationController = [[UINavigationController alloc] initWithRootViewController:newHomeworkViewController];
-    newHomeworkNavigationController.navigationBar.barTintColor = [UIColor colorWithRed:30/256.0 green:130/256.0 blue:210/256.0 alpha:1];
-    newHomeworkNavigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName:[UIFont systemFontOfSize:17],NSForegroundColorAttributeName:[UIColor whiteColor]};
-    newHomeworkNavigationController.navigationBar.tintColor = [UIColor whiteColor];
-    [self presentViewController:newHomeworkNavigationController animated:YES completion:^{}];
+    EnterClassroomViewController *enterClassroomViewController = [[EnterClassroomViewController alloc] init];
+    enterClassroomViewController.title = [_classroomArray[indexPath.row] objectForKey:@"coursename"];
+    enterClassroomViewController.hidesBottomBarWhenPushed = YES;
+    enterClassroomViewController.course = _classroomArray[indexPath.row];
+    [self.navigationController pushViewController:enterClassroomViewController animated:YES];
 }
 -(void)loadAlertControllerWithTitle:(NSString *) title indexPath:(NSIndexPath *)indexPath
 {

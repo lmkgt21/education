@@ -7,6 +7,8 @@
 //
 
 #import "PersonalViewController.h"
+#import "PersonalInfoViewController.h"
+#import "UserManager.h"
 static NSString *const personalViewControllerTalbeViewCellId = @"personalViewControllerTalbeViewCellId";
 @interface PersonalViewController ()
 
@@ -41,6 +43,10 @@ static NSString *const personalViewControllerTalbeViewCellId = @"personalViewCon
     }
     else if (section == 1)
     {
+        return 1;
+    }
+    else if (section == 2)
+    {
         return 2;
     }
     else{
@@ -52,27 +58,50 @@ static NSString *const personalViewControllerTalbeViewCellId = @"personalViewCon
     PersonalTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:personalViewControllerTalbeViewCellId forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (indexPath.section == 0) {
-        if (indexPath.row == 0)
-            cell.titleLabel.text = @"个人信息";
+        if (indexPath.row == 0) {
+            cell.titleLabel.text = @"用户名：";
+            cell.arrowsLabel.text = [[UserManager sharedUserManager] getUsernameFromLocal];
+        }
         else if (indexPath.row == 1)
-            cell.titleLabel.text = @"修改密码";
+        {
+            cell.titleLabel.text = @"是否管理员：";
+            if ([[UserManager sharedUserManager] getIsManagerFromLocal]) {
+                cell.arrowsLabel.text = @"是";
+            }
+            else
+            {
+                cell.arrowsLabel.text = @"否";
+            }
+        }
     }
     else if (indexPath.section == 1)
     {
+        cell.titleLabel.text = @"修改密码";
+        cell.arrowsLabel.text = @">";
+    }
+    else if (indexPath.section == 2)
+    {
         if (indexPath.row == 0)
+        {
             cell.titleLabel.text = @"意见反馈";
+            cell.arrowsLabel.text = @">";
+        }
         else if (indexPath.row == 1)
+        {
             cell.titleLabel.text = @"关于我们";
+            cell.arrowsLabel.text = @">";
+        }
     }
     else
     {
         cell.titleLabel.text = @"退出登录";
+        cell.arrowsLabel.text = @">";
     }
     return cell;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 4;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -81,17 +110,15 @@ static NSString *const personalViewControllerTalbeViewCellId = @"personalViewCon
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0) {
-        if (indexPath.row == 0)
-        {}
-        else if (indexPath.row == 1)
-        {
-            ChangePasswordViewController *changePasswordViewController = [[ChangePasswordViewController alloc] init];
-            changePasswordViewController.title = @"修改密码";
-            changePasswordViewController.hidesBottomBarWhenPushed = YES;
-            [self.navigationController pushViewController:changePasswordViewController animated:YES];
-        }
     }
     else if (indexPath.section == 1)
+    {
+        ChangePasswordViewController *changePasswordViewController = [[ChangePasswordViewController alloc] init];
+        changePasswordViewController.title = @"修改密码";
+        changePasswordViewController.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:changePasswordViewController animated:YES];
+    }
+    else if (indexPath.section == 2)
     {
         if (indexPath.row == 0)
         {
@@ -124,6 +151,9 @@ static NSString *const personalViewControllerTalbeViewCellId = @"personalViewCon
 */
 -(void)loadLogOutAlertController
 {
+    
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"" delegate:self cancelButtonTitle:@"" otherButtonTitles:@"", nil];
+//    [alert show];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"您确认要退出吗" message:nil preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         UserManager *userManager = [UserManager sharedUserManager];

@@ -244,7 +244,7 @@ static NSString *const addCourseViewControllerTalbeViewCellId = @"addCourseViewC
 -(void)loadSuccessAlertController
 {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"加入成功！" message:@"注意，重复加入无效" preferredStyle:UIAlertControllerStyleAlert];
-    [alertController addAction:[UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    [alertController addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             [self.classroomViewController downLoadData];
         }];

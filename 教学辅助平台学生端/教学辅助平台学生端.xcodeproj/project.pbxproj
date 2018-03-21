@@ -7,12 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E1181DA203C0FFB0029B401 /* NewHomeworkTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1181D9203C0FFB0029B401 /* NewHomeworkTableViewCell.m */; };
-		2E1181DE203C1E650029B401 /* ChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1181DD203C1E650029B401 /* ChoiceViewController.m */; };
-		2E1181E3203C31930029B401 /* 方形_未选中.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1181E1203C31930029B401 /* 方形_未选中.png */; };
-		2E1181E4203C31930029B401 /* 方形_选中.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E1181E2203C31930029B401 /* 方形_选中.png */; };
-		2E1181EA203C49040029B401 /* QuestionBankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1181E9203C49040029B401 /* QuestionBankViewController.m */; };
-		2E1181EE203C4CDC0029B401 /* QuestionBankTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1181ED203C4CDC0029B401 /* QuestionBankTableViewCell.m */; };
 		2E1559082030893F009BF180 /* AddCourseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1559072030893F009BF180 /* AddCourseTableViewCell.m */; };
 		2E1B238E2024173D008F99E4 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1B238D2024173D008F99E4 /* ChangePasswordViewController.m */; };
 		2E1B239320248DF7008F99E4 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E1B239220248DF7008F99E4 /* AboutUsViewController.m */; };
@@ -53,12 +47,21 @@
 		2E53AF671FF676A2006EB4E4 /* UserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E53AF661FF676A2006EB4E4 /* UserManager.m */; };
 		2E5E26C12004CC2A0058F771 /* TitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5E26C02004CC2A0058F771 /* TitleView.m */; };
 		2E5E26C52004D31C0058F771 /* PersonalTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E5E26C42004D31C0058F771 /* PersonalTableViewCell.m */; };
+		2E918AD9205E48B300066810 /* EnterClassroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E918AD8205E48B300066810 /* EnterClassroomViewController.m */; };
+		2E918ADD205E525A00066810 /* CheckScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E918ADC205E525A00066810 /* CheckScoreViewController.m */; };
+		2E918AE1205E546D00066810 /* CurrentWorkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E918AE0205E546D00066810 /* CurrentWorkViewController.m */; };
+		2E918AE6205E700800066810 /* TotalPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E918AE5205E700800066810 /* TotalPointViewController.m */; };
+		2E918AED205E73CD00066810 /* ChoiceScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E918AEC205E73CD00066810 /* ChoiceScoreViewController.m */; };
+		2E918AF1205E873C00066810 /* ScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E918AF0205E873C00066810 /* ScoreTableViewCell.m */; };
+		2E918AF5205E9CC600066810 /* ChoiceQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E918AF4205E9CC600066810 /* ChoiceQuestionViewController.m */; };
+		2E918AF9205EC1F900066810 /* 方形_未选中.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E918AF7205EC1F900066810 /* 方形_未选中.png */; };
+		2E918AFA205EC1F900066810 /* 方形_选中.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E918AF8205EC1F900066810 /* 方形_选中.png */; };
+		2E9579FF205FFB2B0008EEB5 /* PersonalInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9579FE205FFB2B0008EEB5 /* PersonalInfoViewController.m */; };
 		2EA4FBFD1FFD06EA009B776F /* TransitionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA4FBFC1FFD06EA009B776F /* TransitionView.m */; };
 		2EA4FC011FFD08F8009B776F /* logo_big_circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4FC001FFD08F8009B776F /* logo_big_circle.png */; };
 		2EA4FC051FFD1239009B776F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA4FC041FFD1239009B776F /* RegisterViewController.m */; };
 		2EA4FC082000E524009B776F /* NoNetWorkingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EA4FC072000E524009B776F /* NoNetWorkingView.m */; };
 		2EA4FC0F2000F49F009B776F /* 网络无法连接.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EA4FC0E2000F49F009B776F /* 网络无法连接.png */; };
-		2EC9AD91203BDB1F00C2D5DA /* NewHomeworkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC9AD90203BDB1F00C2D5DA /* NewHomeworkViewController.m */; };
 		2ED7233F1FF274A9000B9B75 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED7233E1FF274A9000B9B75 /* AppDelegate.m */; };
 		2ED723421FF274A9000B9B75 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED723411FF274A9000B9B75 /* ViewController.m */; };
 		2ED723451FF274A9000B9B75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2ED723431FF274A9000B9B75 /* Main.storyboard */; };
@@ -97,16 +100,6 @@
 
 /* Begin PBXFileReference section */
 		2A02C61D96A3A6B4D748ED44 /* Pods-教学辅助平台学生端.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-教学辅助平台学生端.debug.xcconfig"; path = "Pods/Target Support Files/Pods-教学辅助平台学生端/Pods-教学辅助平台学生端.debug.xcconfig"; sourceTree = "<group>"; };
-		2E1181D8203C0FFB0029B401 /* NewHomeworkTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewHomeworkTableViewCell.h; sourceTree = "<group>"; };
-		2E1181D9203C0FFB0029B401 /* NewHomeworkTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewHomeworkTableViewCell.m; sourceTree = "<group>"; };
-		2E1181DC203C1E650029B401 /* ChoiceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoiceViewController.h; sourceTree = "<group>"; };
-		2E1181DD203C1E650029B401 /* ChoiceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoiceViewController.m; sourceTree = "<group>"; };
-		2E1181E1203C31930029B401 /* 方形_未选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "方形_未选中.png"; sourceTree = "<group>"; };
-		2E1181E2203C31930029B401 /* 方形_选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "方形_选中.png"; sourceTree = "<group>"; };
-		2E1181E8203C49040029B401 /* QuestionBankViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionBankViewController.h; sourceTree = "<group>"; };
-		2E1181E9203C49040029B401 /* QuestionBankViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionBankViewController.m; sourceTree = "<group>"; };
-		2E1181EC203C4CDC0029B401 /* QuestionBankTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuestionBankTableViewCell.h; sourceTree = "<group>"; };
-		2E1181ED203C4CDC0029B401 /* QuestionBankTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuestionBankTableViewCell.m; sourceTree = "<group>"; };
 		2E1559062030893F009BF180 /* AddCourseTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddCourseTableViewCell.h; sourceTree = "<group>"; };
 		2E1559072030893F009BF180 /* AddCourseTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddCourseTableViewCell.m; sourceTree = "<group>"; };
 		2E1B238C2024173D008F99E4 /* ChangePasswordViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordViewController.h; sourceTree = "<group>"; };
@@ -161,6 +154,24 @@
 		2E5E26C02004CC2A0058F771 /* TitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TitleView.m; sourceTree = "<group>"; };
 		2E5E26C32004D31C0058F771 /* PersonalTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalTableViewCell.h; sourceTree = "<group>"; };
 		2E5E26C42004D31C0058F771 /* PersonalTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalTableViewCell.m; sourceTree = "<group>"; };
+		2E918AD7205E48B300066810 /* EnterClassroomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterClassroomViewController.h; sourceTree = "<group>"; };
+		2E918AD8205E48B300066810 /* EnterClassroomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterClassroomViewController.m; sourceTree = "<group>"; };
+		2E918ADB205E525A00066810 /* CheckScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckScoreViewController.h; sourceTree = "<group>"; };
+		2E918ADC205E525A00066810 /* CheckScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckScoreViewController.m; sourceTree = "<group>"; };
+		2E918ADF205E546D00066810 /* CurrentWorkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentWorkViewController.h; sourceTree = "<group>"; };
+		2E918AE0205E546D00066810 /* CurrentWorkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrentWorkViewController.m; sourceTree = "<group>"; };
+		2E918AE4205E700800066810 /* TotalPointViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TotalPointViewController.h; sourceTree = "<group>"; };
+		2E918AE5205E700800066810 /* TotalPointViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TotalPointViewController.m; sourceTree = "<group>"; };
+		2E918AEB205E73CD00066810 /* ChoiceScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoiceScoreViewController.h; sourceTree = "<group>"; };
+		2E918AEC205E73CD00066810 /* ChoiceScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoiceScoreViewController.m; sourceTree = "<group>"; };
+		2E918AEF205E873C00066810 /* ScoreTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreTableViewCell.h; sourceTree = "<group>"; };
+		2E918AF0205E873C00066810 /* ScoreTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreTableViewCell.m; sourceTree = "<group>"; };
+		2E918AF3205E9CC600066810 /* ChoiceQuestionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChoiceQuestionViewController.h; sourceTree = "<group>"; };
+		2E918AF4205E9CC600066810 /* ChoiceQuestionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChoiceQuestionViewController.m; sourceTree = "<group>"; };
+		2E918AF7205EC1F900066810 /* 方形_未选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "方形_未选中.png"; sourceTree = "<group>"; };
+		2E918AF8205EC1F900066810 /* 方形_选中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "方形_选中.png"; sourceTree = "<group>"; };
+		2E9579FD205FFB2B0008EEB5 /* PersonalInfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalInfoViewController.h; sourceTree = "<group>"; };
+		2E9579FE205FFB2B0008EEB5 /* PersonalInfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalInfoViewController.m; sourceTree = "<group>"; };
 		2EA4FBFB1FFD06EA009B776F /* TransitionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransitionView.h; sourceTree = "<group>"; };
 		2EA4FBFC1FFD06EA009B776F /* TransitionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionView.m; sourceTree = "<group>"; };
 		2EA4FC001FFD08F8009B776F /* logo_big_circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_big_circle.png; sourceTree = "<group>"; };
@@ -169,8 +180,6 @@
 		2EA4FC062000E524009B776F /* NoNetWorkingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoNetWorkingView.h; sourceTree = "<group>"; };
 		2EA4FC072000E524009B776F /* NoNetWorkingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoNetWorkingView.m; sourceTree = "<group>"; };
 		2EA4FC0E2000F49F009B776F /* 网络无法连接.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "网络无法连接.png"; sourceTree = "<group>"; };
-		2EC9AD8F203BDB1F00C2D5DA /* NewHomeworkViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewHomeworkViewController.h; sourceTree = "<group>"; };
-		2EC9AD90203BDB1F00C2D5DA /* NewHomeworkViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewHomeworkViewController.m; sourceTree = "<group>"; };
 		2ED7233A1FF274A9000B9B75 /* 教学辅助平台学生端.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "教学辅助平台学生端.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2ED7233D1FF274A9000B9B75 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2ED7233E1FF274A9000B9B75 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -236,54 +245,6 @@
 				CE495211702105D9B614568E /* Pods-教学辅助平台学生端.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		2E1181D7203C0FD40029B401 /* NewHomeworkTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				2E1181D8203C0FFB0029B401 /* NewHomeworkTableViewCell.h */,
-				2E1181D9203C0FFB0029B401 /* NewHomeworkTableViewCell.m */,
-			);
-			path = NewHomeworkTableViewCell;
-			sourceTree = "<group>";
-		};
-		2E1181DB203C1E4F0029B401 /* 选择题 */ = {
-			isa = PBXGroup;
-			children = (
-				2E1181E0203C317C0029B401 /* 图片 */,
-				2E1181DF203C21780029B401 /* 题库 */,
-				2E1181DC203C1E650029B401 /* ChoiceViewController.h */,
-				2E1181DD203C1E650029B401 /* ChoiceViewController.m */,
-			);
-			path = "选择题";
-			sourceTree = "<group>";
-		};
-		2E1181DF203C21780029B401 /* 题库 */ = {
-			isa = PBXGroup;
-			children = (
-				2E1181EB203C4CBA0029B401 /* QuestionBankTableViewCell */,
-				2E1181E8203C49040029B401 /* QuestionBankViewController.h */,
-				2E1181E9203C49040029B401 /* QuestionBankViewController.m */,
-			);
-			path = "题库";
-			sourceTree = "<group>";
-		};
-		2E1181E0203C317C0029B401 /* 图片 */ = {
-			isa = PBXGroup;
-			children = (
-				2E1181E1203C31930029B401 /* 方形_未选中.png */,
-				2E1181E2203C31930029B401 /* 方形_选中.png */,
-			);
-			path = "图片";
-			sourceTree = "<group>";
-		};
-		2E1181EB203C4CBA0029B401 /* QuestionBankTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				2E1181EC203C4CDC0029B401 /* QuestionBankTableViewCell.h */,
-				2E1181ED203C4CDC0029B401 /* QuestionBankTableViewCell.m */,
-			);
-			path = QuestionBankTableViewCell;
 			sourceTree = "<group>";
 		};
 		2E1559052030891B009BF180 /* AddCourseTableViewCell */ = {
@@ -369,9 +330,9 @@
 		2E53AEE81FF51D68006EB4E4 /* 课堂 */ = {
 			isa = PBXGroup;
 			children = (
+				2E918AD6205E486400066810 /* EnterClassroomViewController */,
 				2EF0CDB920332929009F94AC /* ClassroomTableViewCell */,
 				2E506712202B146A00C4485E /* AddCourseViewController */,
-				2EC9AD8E203BDAE600C2D5DA /* 新作业 */,
 				2E53AEEF1FF51DF0006EB4E4 /* ClassroomViewController.h */,
 				2E53AEF01FF51DF0006EB4E4 /* ClassroomViewController.m */,
 			);
@@ -402,6 +363,7 @@
 		2E53AEEB1FF51D8A006EB4E4 /* 个人 */ = {
 			isa = PBXGroup;
 			children = (
+				2E9579FC205FF7990008EEB5 /* 个人信息 */,
 				2E1B23942024ADA4008F99E4 /* 意见反馈 */,
 				2E1B238F20248DB7008F99E4 /* 关于我们 */,
 				2E1B238B20241718008F99E4 /* 修改密码 */,
@@ -472,6 +434,94 @@
 			path = PersonalTableViewCell;
 			sourceTree = "<group>";
 		};
+		2E918AD6205E486400066810 /* EnterClassroomViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E918ADE205E544400066810 /* CurrentWorkViewController */,
+				2E918ADA205E522A00066810 /* CheckScoreViewController */,
+				2E918AD7205E48B300066810 /* EnterClassroomViewController.h */,
+				2E918AD8205E48B300066810 /* EnterClassroomViewController.m */,
+			);
+			path = EnterClassroomViewController;
+			sourceTree = "<group>";
+		};
+		2E918ADA205E522A00066810 /* CheckScoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E918AEE205E871100066810 /* ScoreTableViewCell */,
+				2E918AE7205E737500066810 /* ChoiceScoreViewController */,
+				2E918AE3205E6FEF00066810 /* TotalPointViewController */,
+				2E918ADB205E525A00066810 /* CheckScoreViewController.h */,
+				2E918ADC205E525A00066810 /* CheckScoreViewController.m */,
+			);
+			path = CheckScoreViewController;
+			sourceTree = "<group>";
+		};
+		2E918ADE205E544400066810 /* CurrentWorkViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E918AF2205E9C9400066810 /* ChoiceQuestionViewController */,
+				2E918ADF205E546D00066810 /* CurrentWorkViewController.h */,
+				2E918AE0205E546D00066810 /* CurrentWorkViewController.m */,
+			);
+			path = CurrentWorkViewController;
+			sourceTree = "<group>";
+		};
+		2E918AE3205E6FEF00066810 /* TotalPointViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E918AE4205E700800066810 /* TotalPointViewController.h */,
+				2E918AE5205E700800066810 /* TotalPointViewController.m */,
+			);
+			path = TotalPointViewController;
+			sourceTree = "<group>";
+		};
+		2E918AE7205E737500066810 /* ChoiceScoreViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E918AEB205E73CD00066810 /* ChoiceScoreViewController.h */,
+				2E918AEC205E73CD00066810 /* ChoiceScoreViewController.m */,
+			);
+			path = ChoiceScoreViewController;
+			sourceTree = "<group>";
+		};
+		2E918AEE205E871100066810 /* ScoreTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2E918AEF205E873C00066810 /* ScoreTableViewCell.h */,
+				2E918AF0205E873C00066810 /* ScoreTableViewCell.m */,
+			);
+			path = ScoreTableViewCell;
+			sourceTree = "<group>";
+		};
+		2E918AF2205E9C9400066810 /* ChoiceQuestionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2E918AF6205EC1EC00066810 /* 图片 */,
+				2E918AF3205E9CC600066810 /* ChoiceQuestionViewController.h */,
+				2E918AF4205E9CC600066810 /* ChoiceQuestionViewController.m */,
+			);
+			path = ChoiceQuestionViewController;
+			sourceTree = "<group>";
+		};
+		2E918AF6205EC1EC00066810 /* 图片 */ = {
+			isa = PBXGroup;
+			children = (
+				2E918AF7205EC1F900066810 /* 方形_未选中.png */,
+				2E918AF8205EC1F900066810 /* 方形_选中.png */,
+			);
+			path = "图片";
+			sourceTree = "<group>";
+		};
+		2E9579FC205FF7990008EEB5 /* 个人信息 */ = {
+			isa = PBXGroup;
+			children = (
+				2E9579FD205FFB2B0008EEB5 /* PersonalInfoViewController.h */,
+				2E9579FE205FFB2B0008EEB5 /* PersonalInfoViewController.m */,
+			);
+			path = "个人信息";
+			sourceTree = "<group>";
+		};
 		2EA4FBF81FFD050C009B776F /* 图片 */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,17 +564,6 @@
 				2EA4FC0E2000F49F009B776F /* 网络无法连接.png */,
 			);
 			path = "图片";
-			sourceTree = "<group>";
-		};
-		2EC9AD8E203BDAE600C2D5DA /* 新作业 */ = {
-			isa = PBXGroup;
-			children = (
-				2E1181DB203C1E4F0029B401 /* 选择题 */,
-				2E1181D7203C0FD40029B401 /* NewHomeworkTableViewCell */,
-				2EC9AD8F203BDB1F00C2D5DA /* NewHomeworkViewController.h */,
-				2EC9AD90203BDB1F00C2D5DA /* NewHomeworkViewController.m */,
-			);
-			path = "新作业";
 			sourceTree = "<group>";
 		};
 		2ED723311FF274A9000B9B75 = {
@@ -792,7 +831,7 @@
 				2E53AF4A1FF54612006EB4E4 /* 社区@3x.png in Resources */,
 				2E1B239C2025D4CB008F99E4 /* 圆形_选中.png in Resources */,
 				2E53AF441FF54612006EB4E4 /* 个人_selected@3x.png in Resources */,
-				2E1181E3203C31930029B401 /* 方形_未选中.png in Resources */,
+				2E918AF9205EC1F900066810 /* 方形_未选中.png in Resources */,
 				2E53AF161FF54575006EB4E4 /* 个人_selected.png in Resources */,
 				2EF6554320020F2E00D8985A /* 文件.png in Resources */,
 				2E53AF2A1FF54585006EB4E4 /* 社区_selected@2x.png in Resources */,
@@ -804,7 +843,7 @@
 				2E53AF241FF54585006EB4E4 /* 个人@2x.png in Resources */,
 				2E53AF151FF54575006EB4E4 /* 个人.png in Resources */,
 				2E53AF1B1FF54575006EB4E4 /* 资料_selected.png in Resources */,
-				2E1181E4203C31930029B401 /* 方形_选中.png in Resources */,
+				2E918AFA205EC1F900066810 /* 方形_选中.png in Resources */,
 				2E53AF2B1FF54585006EB4E4 /* 资料@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -879,33 +918,36 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E1B239320248DF7008F99E4 /* AboutUsViewController.m in Sources */,
+				2E918AF5205E9CC600066810 /* ChoiceQuestionViewController.m in Sources */,
 				2EF6555E2002650D00D8985A /* NewBookViewController.m in Sources */,
+				2E918AED205E73CD00066810 /* ChoiceScoreViewController.m in Sources */,
 				2ED723421FF274A9000B9B75 /* ViewController.m in Sources */,
 				2E1559082030893F009BF180 /* AddCourseTableViewCell.m in Sources */,
+				2E9579FF205FFB2B0008EEB5 /* PersonalInfoViewController.m in Sources */,
 				2EF655622003692F00D8985A /* BookDetailViewController.m in Sources */,
 				2E1B238E2024173D008F99E4 /* ChangePasswordViewController.m in Sources */,
+				2E918AE6205E700800066810 /* TotalPointViewController.m in Sources */,
+				2E918AD9205E48B300066810 /* EnterClassroomViewController.m in Sources */,
 				2ED7234D1FF274A9000B9B75 /* main.m in Sources */,
 				2E53AEF11FF51DF0006EB4E4 /* ClassroomViewController.m in Sources */,
-				2EC9AD91203BDB1F00C2D5DA /* NewHomeworkViewController.m in Sources */,
 				2E53AEF71FF51E30006EB4E4 /* CommunityViewController.m in Sources */,
+				2E918ADD205E525A00066810 /* CheckScoreViewController.m in Sources */,
 				2EF0CDBC2033294E009F94AC /* ClassroomTableViewCell.m in Sources */,
 				2EA4FC082000E524009B776F /* NoNetWorkingView.m in Sources */,
 				2E5E26C12004CC2A0058F771 /* TitleView.m in Sources */,
 				2ED7233F1FF274A9000B9B75 /* AppDelegate.m in Sources */,
-				2E1181DA203C0FFB0029B401 /* NewHomeworkTableViewCell.m in Sources */,
-				2E1181EE203C4CDC0029B401 /* QuestionBankTableViewCell.m in Sources */,
 				2E506715202B14B600C4485E /* AddCourseViewController.m in Sources */,
 				2E5E26C52004D31C0058F771 /* PersonalTableViewCell.m in Sources */,
 				2EA4FBFD1FFD06EA009B776F /* TransitionView.m in Sources */,
 				2E53AEF41FF51E16006EB4E4 /* DataViewController.m in Sources */,
-				2E1181DE203C1E650029B401 /* ChoiceViewController.m in Sources */,
 				2EA4FC051FFD1239009B776F /* RegisterViewController.m in Sources */,
+				2E918AF1205E873C00066810 /* ScoreTableViewCell.m in Sources */,
 				2E53AF5D1FF62462006EB4E4 /* LogInViewController.m in Sources */,
 				2EF6554F20021A1E00D8985A /* DataTableViewCell.m in Sources */,
 				2E1B23972024B253008F99E4 /* SuggestionViewController.m in Sources */,
 				2E53AEFA1FF51E72006EB4E4 /* PersonalViewController.m in Sources */,
 				2E53AF671FF676A2006EB4E4 /* UserManager.m in Sources */,
-				2E1181EA203C49040029B401 /* QuestionBankViewController.m in Sources */,
+				2E918AE1205E546D00066810 /* CurrentWorkViewController.m in Sources */,
 				2E53AEE71FF51C02006EB4E4 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1071,9 +1113,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UHCLK74DHB;
+				DEVELOPMENT_TEAM = 84B6C5H942;
 				INFOPLIST_FILE = "教学辅助平台学生端/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gt.---------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1087,9 +1129,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = UHCLK74DHB;
+				DEVELOPMENT_TEAM = 84B6C5H942;
 				INFOPLIST_FILE = "教学辅助平台学生端/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gt.---------";
 				PRODUCT_NAME = "$(TARGET_NAME)";

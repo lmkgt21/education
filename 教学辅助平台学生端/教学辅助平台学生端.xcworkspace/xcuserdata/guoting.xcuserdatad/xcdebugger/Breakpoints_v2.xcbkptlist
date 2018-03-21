@@ -13,5 +13,37 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x6559;&#x5b66;&#x8f85;&#x52a9;&#x5e73;&#x53f0;&#x5b66;&#x751f;&#x7aef;/&#x4e3b;&#x754c;&#x9762;/&#x8bfe;&#x5802;/EnterClassroomViewController/CurrentWorkViewController/ChoiceQuestionViewController/ChoiceQuestionViewController.m"
+            timestampString = "543117629.431779"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "200"
+            endingLineNumber = "200"
+            landmarkName = "-buttonReload"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "&#x6559;&#x5b66;&#x8f85;&#x52a9;&#x5e73;&#x53f0;&#x5b66;&#x751f;&#x7aef;/&#x4e3b;&#x754c;&#x9762;/&#x8bfe;&#x5802;/EnterClassroomViewController/CurrentWorkViewController/ChoiceQuestionViewController/ChoiceQuestionViewController.m"
+            timestampString = "543117629.432062"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "-buttonReload"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

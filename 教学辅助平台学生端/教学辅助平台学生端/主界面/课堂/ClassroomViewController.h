@@ -14,7 +14,6 @@
 #import "TransitionView.h"
 #import "ClassroomTableViewCell.h"
 
-#import "NewHomeworkViewController.h"
 
 @interface ClassroomViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,NoNetWorkingViewDelegate,ClassroomTableViewCellDelegate>
 

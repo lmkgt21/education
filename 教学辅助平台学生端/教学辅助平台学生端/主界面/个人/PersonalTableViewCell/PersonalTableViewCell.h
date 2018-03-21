@@ -10,5 +10,6 @@
 #import <Masonry.h>
 @interface PersonalTableViewCell : UITableViewCell
 
-@property (nonatomic,retain) UILabel *titleLabel;
+@property (nonatomic,retain)    UILabel *titleLabel;
+@property (nonatomic,retain)    UILabel *arrowsLabel;
 @end

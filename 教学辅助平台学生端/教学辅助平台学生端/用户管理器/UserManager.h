@@ -43,6 +43,9 @@ typedef void (^CompleteAndObjectBlock)(int result,BmobObject *bmobObject);
 //获取objectId
 -(NSString *)getObjectIdFromLocal;
 
+//获取用户名
+-(NSString *)getUsernameFromLocal;
+
 //新建文件夹
 -(void)newFolderWithName:(NSString *)folderName path:(NSString *) path block:(CompleteBlock) complete;
 //删除文件夹
@@ -57,6 +60,10 @@ typedef void (^CompleteAndObjectBlock)(int result,BmobObject *bmobObject);
 -(void)getBookWithPath:(NSString *)path block:(CompleteAndResultBlock) completeAndResult;
 //保存反馈到后台
 -(void)saveSuggestionToBackgroundWith:(NSString *)username type:(NSString *)type description:(NSString *)description contact:(NSString *)contact block:(CompleteBlock) complete;
+//设置用户信息
+-(void)setUserInfoWithDic:(NSDictionary *)userInfo block:(CompleteBlock) complete;
+//获取用户信息
+-(NSDictionary *)getUserInfo;
 //------------课堂模块-----------
 //-----教师端------
 //新建一个课程
@@ -77,6 +84,12 @@ typedef void (^CompleteAndObjectBlock)(int result,BmobObject *bmobObject);
 -(void)submitTastWithTitle:(NSString *)title course:(BmobObject *)course block:(CompleteBlock) complete;
 //获取指定课程的指定作业
 -(void)getQuestionsOfCourse:(BmobObject *)course WithType:(NSString *)type block:(CompleteAndResultBlock) completeAndResult;
+//获取指定课程所有学生的分数
+-(NSDictionary *)getAllScoreWithCourse:(BmobObject*) course;
+//删除指定课程的某个学生的分数
+-(void)removeScoreFromCourse:(BmobObject *) course withStudentName:(NSString *)name block:(CompleteBlock) complete;
+//获取指定课程的所有学生
+-(void)getAllStudentsWithCourse:(BmobObject *) course block:(CompleteAndResultBlock) completeAndResult;
 
 //------学生端------
 //获取所有课程/检索指定的课程
@@ -87,4 +100,8 @@ typedef void (^CompleteAndObjectBlock)(int result,BmobObject *bmobObject);
 -(void)getCoursesOfSutentWithBlock:(CompleteAndResultBlock) completeAndResult;
 //删除当前学生用户某个课程
 -(void)removeCourse:(BmobObject *)course block:(CompleteBlock) complete;
+//提交当前学生用户的当前作业的选择题总分到相应课程
+-(void)submitChoiceScore:(double) choiceScore toCourse:(BmobObject *) course block:(CompleteBlock) complete;
+//获取当前学生用户指定课程的指定题型的分数
+-(NSDictionary *)getScoreWithType:(NSString*) type course:(BmobObject *) course;
 @end

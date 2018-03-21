@@ -72,7 +72,7 @@ static UserManager *userManager = nil;
         {
             if ([password isEqualToString:[array[0] objectForKey:@"password"]]) {
                 complete(1);//登录成功，返回1
-                [self saveObjectIdToLocal:[array[0] objectId] isManager:[[array[0] objectForKey:@"isManager"] boolValue]];//保存objectId
+                [self saveObjectIdToLocal:[array[0] objectId] isManager:[[array[0] objectForKey:@"isManager"] boolValue] username:[array[0] objectForKey:@"username"]];//保存objectId
             }
             else
             {
@@ -86,6 +86,7 @@ static UserManager *userManager = nil;
 {
     [self deleteObjectIdFromLocal];//删除当前用户
     [self deleteIsManager];//删除管理员信息
+    [self deleteUsernameFromLocal];
     self.userInfo = nil;//清空内存中的信息
 }
 //更改密码
@@ -129,11 +130,12 @@ static UserManager *userManager = nil;
 {
     self.userInfo = userInfo;
 }
--(void)saveObjectIdToLocal:(NSString *) objectId isManager:(BOOL) isManager
+-(void)saveObjectIdToLocal:(NSString *) objectId isManager:(BOOL) isManager username:(NSString *)username
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:objectId forKey:@"objectId"];
     [userDefaults setBool:isManager forKey:@"isManager"];
+    [userDefaults setObject:username forKey:@"username"];
     [userDefaults synchronize];
 }
 -(void)deleteIsManager
@@ -148,6 +150,12 @@ static UserManager *userManager = nil;
     [userDefaults removeObjectForKey:@"objectId"];
     [userDefaults synchronize];
 }
+-(void)deleteUsernameFromLocal
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults removeObjectForKey:@"username"];
+    [userDefaults synchronize];
+}
 -(BOOL)getIsManagerFromLocal
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -159,6 +167,12 @@ static UserManager *userManager = nil;
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults synchronize];
     return [userDefaults objectForKey:@"objectId"];
+}
+-(NSString *)getUsernameFromLocal
+{
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults synchronize];
+    return [userDefaults objectForKey:@"username"];
 }
 //------------资料模块-----------
 //新建文件夹
@@ -307,6 +321,29 @@ static UserManager *userManager = nil;
         }
     }];
 }
+//设置用户信息
+-(void)setUserInfoWithDic:(NSDictionary *)userInfo block:(CompleteBlock) complete
+{
+    BmobObject *bmobObject = [BmobObject objectWithoutDataWithClassName:@"userlist_student" objectId:[self getObjectIdFromLocal]];
+    [bmobObject setObject:userInfo forKey:@"userInfo"];
+    [bmobObject updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        if (isSuccessful) {
+            //提交成功
+            complete(1);
+        }
+        else
+        {
+            //提交失败
+            complete(0);
+        }
+    }];
+}
+//获取用户信息
+-(NSDictionary *)getUserInfo
+{
+    NSDictionary *userInfo = [self.userInfo objectForKey:@"userInfo"];
+    return userInfo;
+}
 
 //------------课堂模块-----------
 //-----教师端------
@@ -453,6 +490,53 @@ static UserManager *userManager = nil;
         }
     }];
 }
+//获取指定课程所有学生的分数
+-(NSDictionary *)getAllScoreWithCourse:(BmobObject*) course
+{
+    NSMutableDictionary *studentDic = [NSMutableDictionary dictionaryWithDictionary:[course objectForKey:@"StudentDic"]];
+    return studentDic;
+}
+//删除指定课程的某个学生的分数
+-(void)removeScoreFromCourse:(BmobObject *) course withStudentName:(NSString *)name block:(CompleteBlock) complete
+{
+    BmobObject *bmobObject = [BmobObject objectWithoutDataWithClassName:@"course_list" objectId:course.objectId];
+    
+    NSMutableDictionary *studentDic = [NSMutableDictionary dictionaryWithDictionary:[course objectForKey:@"StudentDic"]];
+    
+    [studentDic removeObjectForKey:name];
+    
+    [bmobObject setObject:studentDic forKey:@"StudentDic"];
+    [bmobObject updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        if (isSuccessful) {
+            //删除成功
+            complete(1);
+        }
+        else
+        {
+            //删除失败
+            complete(0);
+        }
+    }];
+}
+//获取指定课程的所有学生
+-(void)getAllStudentsWithCourse:(BmobObject *) course block:(CompleteAndResultBlock) completeAndResult
+{
+    BmobQuery *query = [BmobQuery queryWithClassName:@"userlist_student"];
+    
+    BmobQuery *inQuery = [BmobQuery queryWithClassName:@"course_list"];
+    [inQuery whereKey:@"objectId" equalTo:course.objectId];
+    
+    [query whereKey:@"myCourses" matchesQuery:inQuery];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (error) {
+            completeAndResult(0,nil);//获取失败，返回0和nil
+        }
+        else
+        {
+            completeAndResult(1,array);//获取成功，返回1和数据
+        }
+    }];
+}
 //------学生端------
 //获取所有课程/检索指定的课程
 -(void)getCoursesWithKeyword:(NSString *)keyword block:(CompleteAndResultBlock) completeAndResult
@@ -557,4 +641,53 @@ static UserManager *userManager = nil;
         }
     }];
 }
+//提交当前学生用户的当前作业的选择题总分到相应课程
+-(void)submitChoiceScore:(double) choiceScore toCourse:(BmobObject *) course block:(CompleteBlock) complete
+{
+    BmobObject *bmobObject = [BmobObject objectWithoutDataWithClassName:@"course_list" objectId:course.objectId];
+    
+    NSMutableDictionary *studentDic = [NSMutableDictionary dictionaryWithDictionary:[course objectForKey:@"StudentDic"]];
+    
+    NSMutableDictionary *scoreDic = [NSMutableDictionary dictionaryWithDictionary:[studentDic objectForKey:[self.userInfo objectForKey:@"username"]]];
+    NSMutableDictionary *choiceDic = [NSMutableDictionary dictionaryWithDictionary:[scoreDic objectForKey:@"choice"]];
+    if ([course objectForKey:@"title"])//只有在有当前作业的情况下才能拿到值
+    {
+        [choiceDic setObject:[NSNumber numberWithDouble:choiceScore] forKey:[course objectForKey:@"title"]];
+        [scoreDic setObject:choiceDic forKey:@"choice"];
+        [studentDic setObject:scoreDic forKey:[self.userInfo objectForKey:@"username"]];
+        
+        [bmobObject setObject:studentDic forKey:@"StudentDic"];
+        [bmobObject updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+            if (isSuccessful) {
+                //提交成功
+                complete(1);
+            }
+            else
+            {
+                //提交失败
+                complete(0);
+            }
+        }];
+    }
+    else
+    {
+        //无当前作业，无法提交
+        complete(-1);
+    }
+}
+//获取当前学生用户指定课程的指定题型的分数
+-(NSDictionary *)getScoreWithType:(NSString*) type course:(BmobObject *) course
+{
+    NSMutableDictionary *studentDic = [NSMutableDictionary dictionaryWithDictionary:[course objectForKey:@"StudentDic"]];
+    NSMutableDictionary *scoreDic = [NSMutableDictionary dictionaryWithDictionary:[studentDic objectForKey:[self.userInfo objectForKey:@"username"]]];
+    NSMutableDictionary *choiceDic = [NSMutableDictionary dictionaryWithDictionary:[scoreDic objectForKey:type]];
+    if (choiceDic) {
+        return choiceDic;
+    }
+    else
+    {
+        return nil;
+    }
+}
+
 @end
