@@ -345,6 +345,37 @@ static UserManager *userManager = nil;
     return userInfo;
 }
 
+//设置教师用户信息，对应键值：name,sex,contact,school,number
+-(void)setTeacherUserInfoWithDic:(NSDictionary *)userInfo block:(CompleteBlock) complete
+{
+    BmobObject *bmobObject = [BmobObject objectWithoutDataWithClassName:@"userlist_teacher" objectId:[self getObjectIdFromLocal]];
+    [bmobObject setObject:userInfo forKey:@"userInfo"];
+    [bmobObject updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        if (isSuccessful) {
+            //提交成功
+            complete(1);
+        }
+        else
+        {
+            //提交失败
+            complete(0);
+        }
+    }];
+}
+//获取教师用户信息，有数据返回数据，无数据返回空字典，无网络返回nil
+-(void)getTeacherUserInfoWithBlock:(CompleteAndDictionary) completeAndDic
+{
+    [self updateUserInfoFromBackgroundWithblock:^(int result) {
+        if (result == 1) {
+            NSDictionary *dic = [self.userInfo objectForKey:@"userInfo"];
+            completeAndDic(1,dic);
+        }
+        else if (result == 0)
+        {
+            completeAndDic(0,nil);
+        }
+    }];
+}
 //------------课堂模块-----------
 //-----教师端------
 //新建一个课程

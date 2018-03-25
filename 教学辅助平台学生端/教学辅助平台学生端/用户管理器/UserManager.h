@@ -12,6 +12,7 @@
 typedef void (^CompleteBlock)(int result);
 typedef void (^CompleteAndResultBlock)(int result,NSArray *array);
 typedef void (^CompleteAndObjectBlock)(int result,BmobObject *bmobObject);
+typedef void (^CompleteAndDictionary)(int result,NSDictionary *dic);
 @interface UserManager : NSObject
 
 @property (retain) BmobObject *userInfo;
@@ -64,6 +65,10 @@ typedef void (^CompleteAndObjectBlock)(int result,BmobObject *bmobObject);
 -(void)setUserInfoWithDic:(NSDictionary *)userInfo block:(CompleteBlock) complete;
 //获取用户信息
 -(NSDictionary *)getUserInfo;
+//设置教师用户信息，对应键值：name,sex,contact,school,number
+-(void)setTeacherUserInfoWithDic:(NSDictionary *)userInfo block:(CompleteBlock) complete;
+//获取教师用户信息，有数据返回数据，无数据返回空字典，无网络返回nil
+-(void)getTeacherUserInfoWithBlock:(CompleteAndDictionary) completeAndDic;
 //------------课堂模块-----------
 //-----教师端------
 //新建一个课程
@@ -90,7 +95,6 @@ typedef void (^CompleteAndObjectBlock)(int result,BmobObject *bmobObject);
 -(void)removeScoreFromCourse:(BmobObject *) course withStudentName:(NSString *)name block:(CompleteBlock) complete;
 //获取指定课程的所有学生
 -(void)getAllStudentsWithCourse:(BmobObject *) course block:(CompleteAndResultBlock) completeAndResult;
-
 //------学生端------
 //获取所有课程/检索指定的课程
 -(void)getCoursesWithKeyword:(NSString *)keyword block:(CompleteAndResultBlock) completeAndResult;
